@@ -13,5 +13,3 @@ client.on('ready', () => {
   })
 })
 client.login("Your Token")
-                      
-      
