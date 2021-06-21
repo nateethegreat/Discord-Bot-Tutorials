@@ -15,13 +15,13 @@
     server(client)
   })
   client.on('guildMemberAdd', member => {
-    let channel = client.channels.cache.get('854853818688339968')
+    let channel = client.channels.cache.get('channel-id')
     if(!channel) return;
     
     channel.send(`Welcome to the server ${member}! Please read the rules and remember to verify ;)`)
   })
   client.on('guildMemberRemove', member => {
-    let channel = client.channels.cache.get('854853906970837062')
+    let channel = client.channels.cache.get('channel-id')
     if(!channel) return;
     
     channel.send(`Goodbye **${member.user.tag}**, we hope you come back soon...`)
