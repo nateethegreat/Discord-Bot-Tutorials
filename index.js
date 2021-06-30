@@ -40,5 +40,29 @@
     
     channel.send(`Goodbye **${member.user.tag}**, we hope you come back soon...`)
   })
-
+  
+  // Commands
+  
+  client.on('message', message => {
+    let prefix = "t!" // Put whatever you want to be the prefix here.
+    
+    if(message.content.toLowerCase() === `${prefix}hello`) {
+      const helloEmbed = new Discord.MessageEmbed()
+      .setTitle('Hello!')
+      .setColor("GREEN")
+      .setDescription(`Hello ${message.author.username}! Nice to see you again!`)
+      message.channel.send(helloEmbed)
+      console.log(`${message.author.tag} just used the hello command.`)
+    }
+    
+    if(message.content.toLowerCase() === `${prefix}goodbye`) {
+      const goodbyeEmbed = new Discord.MessageEmbed()
+      .setTitle('Goodbye')
+      .setDescription(`See you later ${message.author.username}...`)
+      .setColor("RED") // You can set this to anything you want, as long as its a supported color like "BLURPLE"
+      message.channel.send(goodbyeEmbed)
+      console.log(`${message.author.tag} just used the goodbye command.`)
+    }
+  })
+  
   client.login(process.env.TOKEN)
